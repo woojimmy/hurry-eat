@@ -1,56 +1,83 @@
-# Welcome to your Expo app 👋
+# 얼른먹어
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+> 찍으면 기한 등록, 늦기 전에 얼른먹어!
 
-## Get started
+냉장고에 뭐가 있는지, 언제까지 먹어야 하는지 기억하기 어렵죠. 그러다 결국 음식을 버리게 됩니다.
+기존 앱도 써봤지만 등록하고 관리하는 게 귀찮아서 손이 안 갔다면, **얼른먹어**가 딱이에요.
 
-1. Install dependencies
+포장지 날짜를 찍기만 하면 등록 끝. 챙길 때가 되면 앱이 먼저 알려주고, 기한 안에 잘 챙기면 칭찬해줘요.
 
-   ```bash
-   npm install
-   ```
+---
 
-2. Start the app
+## 이런 분께 추천해요
 
-   ```bash
-   npx expo start
-   ```
+- **장보기 후 한 번에 많이 넣는 분**: 사진 한 장으로 하나씩 빠르게 등록하고, 같은 제품은 "하나 더 등록"으로 이어서 넣을 수 있어요.
+- **넣어두고 잘 잊는 자취생**: 앱을 열지 않아도 챙길 날에 알림이 와요.
+- **복잡한 앱이 싫은 분**: 큰 글씨, 큰 버튼, 짧은 문구로 만들었어요.
 
-In the output, you'll find options to open the app in a
+## 이렇게 써요
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### 1. 찍어서 등록 (10초면 충분)
+포장지의 날짜를 화면 가운데 칸에 맞춰 찍으면 AI가 **기한, 이름, 브랜드**를 읽어서 미리 채워줘요.
+한 번 확인하고 틀린 곳만 고치면 끝! 사진이 잘 안 나왔다면 직접 입력해도 돼요.
 
-You can start developing by editing the files inside the **src/app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- 소비기한, 유통기한, 제조일자를 구분해요. 제조일자만 적혀 있으면 `+7일` `+1개월` 같은 버튼으로 언제까지 먹을지 바로 정할 수 있어요.
+- 이미 지난 날짜가 찍히면 "제조일자야? 기한이 지난 거야?" 하고 한 번 물어봐요.
 
-## Get a fresh project
+### 2. 한눈에 보는 우리 집 냉장고
+- 냉장, 냉동, 실온, 김치냉장고처럼 **보관 장소별로** 나눠 봐요. 베란다처럼 우리 집에만 있는 칸도 직접 만들 수 있어요.
+- 기한이 임박한 순서로 정렬되고, 색으로 구분돼요.
+  - 🚨 **기한 지남**: 지난 식품도 목록에서 사라지지 않아요. 직접 치울 때까지 맨 위에 보여줘요.
+  - **얼른먹어**: 오늘, 내일, 며칠 안에 먹어야 하는 식품
+  - **여유 있음**: 아직 괜찮은 식품
+- 냉동실은 기한 경고 대신 "냉동 12일째"처럼 얼마나 넣어뒀는지만 알려줘요.
 
-When you're ready, run:
+### 3. 먹었으면 쓱 밀어서 치우기
+- 목록에서 **왼쪽으로 밀면** 처리 끝. 먹었는지 버렸는지 따로 묻지 않아요.
+- 여러 개 있으면 "1개만 / 전부" 중에 골라요.
+- 실수로 밀었어도 괜찮아요. 바로 **되돌리기**를 누르거나, "치운 식품"에서 30일 안에 다시 꺼낼 수 있어요.
+
+### 4. 챙길 날에만, 하루 한 번 알림
+- 알림은 **하루에 최대 1개**. 챙길 식품이 있는 날에만 와요.
+- 언제 알려줄지 골라요: 당일, 1일 전, 2일 전, 3일 전, 7일 전 (여러 개 선택 가능, 기본은 1일 전 + 3일 전)
+- 몇 시에 받을지도 정할 수 있어요 (기본 오전 9시).
+- 알림을 누르면 **"오늘 챙길 것"** 화면에서 한 번에 정리할 수 있어요. 다 치우면 "오늘 할 일 끝! 냉장고 깨끗 ✨"
+
+### 5. 잘한 건 칭찬해줘요
+"이번 달 기한 안에 챙긴 식품 12개 🎉"처럼 **잘한 기록만** 보여줘요. 버린 개수로 죄책감을 주지 않아요.
+
+## 얼른먹어가 지키는 약속
+
+- **앱 목록 = 실제 냉장고.** 직접 치우기 전에는 앱이 마음대로 식품을 지우지 않아요.
+- **입력을 강요하지 않아요.** 기본값은 늘 가장 간단한 선택이에요.
+- **알림은 적게.** 하루 한 번, 필요할 때만.
+- **기한을 대신 판단하지 않아요.** 포장지에 적힌 날짜와 보관 장소, 보관한 날짜만 보여줘요. 냉장에서 냉동으로 옮겼다면 언제까지 먹을지는 직접 정할 수 있어요.
+
+## 개인정보
+
+- **로그인 없이** 바로 써요.
+- 모든 데이터는 **내 폰에만** 저장돼요.
+- 찍은 사진은 날짜를 읽는 데만 쓰고, 폰에도 서버에도 저장하지 않아요.
+- 인터넷이 없어도 목록 보기, 직접 등록, 처리, 알림은 다 돼요. (사진 인식만 인터넷이 필요해요.)
+- 앱을 삭제하면 데이터도 함께 사라져요.
+
+## 출시 계획
+
+- **v1 (2026년 11월 10일):** Android 비공개 테스트
+- **이후에 생각하고 있는 것들**
+  - 먹었는지 버렸는지 기록하는 알뜰소비 모드 (원하는 사람만)
+  - 백업, 가족과 냉장고 함께 쓰기
+  - 바코드로 제품 정보 입력
+  - iOS 출시
+  - 레시피 추천, 장보기 목록
+
+---
+
+## 개발자용
+
+Expo(React Native) 앱입니다.
 
 ```bash
-npm run reset-project
+npm install
+npx expo start
 ```
-
-This command will move the starter code to the **example** directory and create a blank **src/app** directory where you can start developing.
-
-### Other setup steps
-
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
