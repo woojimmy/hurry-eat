@@ -1,4 +1,4 @@
-// 기획서 4. 데이터 설계의 테이블과 같은 모양. 나중에 SQLite로 옮길 때 그대로 쓴다.
+// 기획서 4. 데이터 설계의 테이블과 같은 모양. src/db가 이 모양으로 SQLite와 주고받는다.
 
 export type Env = "fridge" | "freezer" | "room";
 
@@ -73,3 +73,27 @@ export type ItemInput = Pick<
   | "storedSince"
   | "dateSource"
 >;
+
+export type Db = {
+  sections: Section[];
+  items: Item[];
+  disposals: Disposal[];
+  settings: Settings;
+};
+
+export const DEFAULT_SECTIONS: Omit<Section, "id" | "sortOrder">[] = [
+  { name: "냉장", env: "fridge", alertEnabled: true },
+  { name: "냉동", env: "freezer", alertEnabled: false },
+  { name: "실온", env: "room", alertEnabled: true },
+  { name: "김치냉장고", env: "fridge", alertEnabled: true },
+];
+
+export const DEFAULT_SETTINGS: Settings = {
+  notifyEnabled: true,
+  notifyOffsets: [1, 3],
+  notifyTime: "09:00",
+  lastSectionId: null,
+  onboardingDone: false,
+  aiUsageDate: null,
+  aiUsageCount: 0,
+};

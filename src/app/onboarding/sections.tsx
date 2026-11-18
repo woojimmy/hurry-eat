@@ -4,9 +4,9 @@ import { Pressable, Text, View } from "react-native";
 import { goHomeFresh, StepLayout, StepTitle } from "@/components/onboarding";
 import { SectionSheet } from "@/components/section-sheet";
 import { CheckRow, EnvTag } from "@/components/ui";
-import { DEFAULT_SECTIONS, useStore } from "@/store/store";
+import { useStore } from "@/store/store";
 import type { Section } from "@/store/types";
-import { ENV_LABEL } from "@/store/types";
+import { DEFAULT_SECTIONS, ENV_LABEL } from "@/store/types";
 import { colors } from "@/theme";
 
 type Row = Omit<Section, "id" | "sortOrder"> & { key: string; checked: boolean };
